@@ -109,8 +109,8 @@ function Login(props) {
             </div>
             <motion.div 
             className={"mt-2 self-center font-bold content-center " + 
-                      (confirmStatus == "Logging in..." ? "text-yellow-500"
-                      : (confirmStatus == "Success" ? "text-green-600" : "text-red-700"))}> 
+                      (confirmStatus === "Logging in..." ? "text-yellow-500"
+                      : (confirmStatus === "Success" ? "text-green-600" : "text-red-700"))}> 
             {confirmStatus}
           </motion.div>
 

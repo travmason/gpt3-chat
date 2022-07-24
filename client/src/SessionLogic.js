@@ -1,9 +1,18 @@
 import axios from 'axios'
 import store from './redux/store'
 
-const backendUrl = process.env.REACT_APP_GPT_URL
-const protocol  = process.env.REACT_APP_GPT_PROTOCOL
+const backendUrl = process.env.REACT_APP_GPT_URL || "http://localhost:4000"
+console.log(process.env)
+console.log("process.env.REACT_APP_GPT_URL:" + process.env.REACT_APP_GPT_URL)
+console.log("BackendURL:" + backendUrl)
+const protocol  = process.env.REACT_APP_GPT_PROTOCOL || "http"
 const fullBackendUrl = `${protocol}://${backendUrl}`
+console.log(fullBackendUrl)
+
+function showENV(item, index, arr) {
+    console.log("here");
+    console.log(arr[index]);
+}
 
 export function isLoggedIn(){
     const state = store.getState()

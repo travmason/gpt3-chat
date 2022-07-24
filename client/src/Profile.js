@@ -1,12 +1,13 @@
 import NavBar from "./components/NavBar";
-import { UserLogin, getPhotoUrl } from "./SessionLogic";
+import { getPhotoUrl } from "./SessionLogic";
+//import { UserLogin, getPhotoUrl } from "./SessionLogic";
 import { useEffect, useRef, useState } from "react";
 import { connect } from 'react-redux'
-import axios from "axios";
+//import axios from "axios";
 
 function Profile(props) {
 
-  const [editMode, setEditMode] = useState(false)
+  //const [editMode, setEditMode] = useState(false)
   const [file, setFile] = useState(null)
 
   const inputFileButton = useRef(null) 
@@ -35,11 +36,11 @@ function Profile(props) {
       </div>
       <div class="bg-white my-12 pb-6 w-full justify-center items-center overflow-hidden md:max-w-sm rounded-lg shadow-sm mx-auto">
       <div class="relative h-40">
-        <img class="absolute h-full w-full object-cover" src="https://images.unsplash.com/photo-1448932133140-b4045783ed9e?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80"/>
+        <img class="absolute h-full w-full object-cover" src="https://images.unsplash.com/photo-1448932133140-b4045783ed9e?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt=""/>
       </div>
       <div onClick={selectPhoto} class="relative shadow mx-auto h-24 w-24 -my-12 border-white rounded-full overflow-hidden border-4">
           <input type='file' id='file' onChange={fileChanged} ref={inputFileButton} style={{display: 'none'}}/>
-          <img class="object-cover w-full h-full" src={getPhotoUrl(props.user.username)}/>
+          <img class="object-cover w-full h-full" src={getPhotoUrl(props.user.username)} alt=""/>
       </div>
       <div class="mt-16">
         <h1 class="text-lg text-center font-semibold">

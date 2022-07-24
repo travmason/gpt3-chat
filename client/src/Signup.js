@@ -2,7 +2,8 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { Redirect } from "react-router";
 import NavBar from "./components/NavBar";
-import { setCookie, UserSignUp } from "./SessionLogic";
+//import { setCookie, UserSignUp } from "./SessionLogic";
+import { UserSignUp } from "./SessionLogic";
 
 function SignUp(props) {
 
@@ -83,8 +84,8 @@ function SignUp(props) {
           </div>
           <motion.div 
             className={"mt-2 self-center font-bold content-center " + 
-                      (confirmStatus == "Signing up..." ? "text-yellow-500"
-                      : (confirmStatus == "Done!" ? "text-green-600" : "text-red-700"))}> 
+                      (confirmStatus === "Signing up..." ? "text-yellow-500"
+                      : (confirmStatus === "Done!" ? "text-green-600" : "text-red-700"))}> 
             {confirmStatus}
           </motion.div>
         </div>

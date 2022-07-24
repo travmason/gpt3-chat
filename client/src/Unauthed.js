@@ -1,5 +1,5 @@
 import {Redirect, Route} from 'react-router-dom';
-import {Header, Shell, Footer} from 'react';
+//import {Header, Shell, Footer} from 'react';
 import { isLoggedIn } from './SessionLogic'
 
 function Unauthed ({component: Component, hasFooterHeader, ...rest}) {
@@ -8,11 +8,7 @@ function Unauthed ({component: Component, hasFooterHeader, ...rest}) {
   if (hasFooterHeader) {
     page = (
       <div>
-        <Header />
-        <Shell>
           <Component {...rest} />
-        </Shell>
-        <Footer />
       </div>
     );
   } else {
@@ -21,7 +17,7 @@ function Unauthed ({component: Component, hasFooterHeader, ...rest}) {
   return (
     <Route
       {...rest}
-      render={(props) => authed == false
+      render={(props) => authed === false
         ? page
         : <Redirect to={{pathname: '/', state: {from: props.location}}} />}
     />
