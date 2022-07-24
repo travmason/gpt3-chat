@@ -1,4 +1,5 @@
 import {Redirect, Route} from 'react-router-dom';
+import React from 'react';
 import {Header, Shell, Footer} from 'react';
 import { isLoggedIn, isLoggedJWTPoll } from './SessionLogic'
 
@@ -21,7 +22,7 @@ function Authed ({component: Component, hasFooterHeader, ...rest}) {
   return (
     <Route
       {...rest}
-      render={(props) => authed == true
+      render={(props) => authed === true
         ? page
         : (isLoggedJWTPoll()
           ? page

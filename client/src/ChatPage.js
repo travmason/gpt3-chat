@@ -51,7 +51,7 @@ function ChatPage(props) {
       alert("socket is null")
       return
     }
-    if(inputText != ""){
+    if(inputText !== ""){
       const newMessageData = { text: inputText, isSent: true, sender: props.user, time: (new Date()).toLocaleString()}
       socket.emit("message", newMessageData)
       addMessage(newMessageData)
