@@ -1,8 +1,7 @@
 import axios from 'axios'
 import store from './redux/store'
 
-const backendUrl = process.env.REACT_APP_GPT_URL || "http://localhost:4000"
-console.log(process.env)
+const backendUrl = process.env.REACT_APP_GPT_URL || "localhost:4000"
 console.log("process.env.REACT_APP_GPT_URL:" + process.env.REACT_APP_GPT_URL)
 console.log("BackendURL:" + backendUrl)
 const protocol  = process.env.REACT_APP_GPT_PROTOCOL || "http"
@@ -24,6 +23,8 @@ export function isLoggedJWTPoll(){
 }
 
 export function UserLogin(username, password){
+    console.log(username);
+    console.log(password);
     return axios({
         method: 'post',
         'Content-Type': 'application/json',
